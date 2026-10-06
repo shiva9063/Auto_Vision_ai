@@ -226,19 +226,3 @@ __marimo__/
 venv/
 .venv/
 
-# ML datasets
-data/raw/
-data/processed/
-
-# Large dataset archives
-*.zip
-*.tar
-*.tgz
-*.tar.gz
-
-# Trained ML models
-*.keras
-*.h5
-
-# Prediction/generated images
-data/predict_images/
