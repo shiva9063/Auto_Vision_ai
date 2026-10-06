@@ -1,0 +1,33 @@
+body{
+    background-color: violet;
+}
+h1 {
+    color: rgb(94, 146, 210);
+    text-align: center;
+}
+
+h2 {
+    color: rgb(118, 112, 232);
+    text-align: center;
+}
+
+form {
+    width: 300px;
+    margin: 50px auto;
+    padding: 30px;
+    text-align: center;
+    border: 2px solid green;
+    border-radius: 10px;
+}
+
+.error {
+    color: #d32f2f;
+    background-color: #ffebee;
+    border: 1px solid #ef9a9a;
+    padding: 10px 15px;
+    margin: 15px auto;
+    width: fit-content;
+    border-radius: 5px;
+    font-size: 14px;
+    text-align: center;
+}

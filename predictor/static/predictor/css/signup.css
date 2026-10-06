@@ -1,0 +1,24 @@
+h1{
+    color:green;
+    text-align: center;
+}
+h2{
+    text-align: center;
+    color: rgb(79, 120, 241);
+}
+form {
+    width: 300px;
+    margin: 50px auto;
+    padding: 30px;
+    text-align: center;
+    border: 2px solid green;
+    border-radius: 10px;
+}
+.login {
+    display: inline-block;
+    padding: 1px 20px;
+    border: 1px solid rgb(144, 133, 137);
+    color: rgb(214, 99, 139);
+    text-decoration: none;
+    border-radius: 2px;
+}

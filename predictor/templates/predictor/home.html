@@ -1,0 +1,83 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="{% static 'predictor/css/home.css' %}">
+</head>
+<body>
+    <h1 class="title">Auto Vision AI</h1>
+    <br> <br>
+
+<div class="pipeline">
+
+    <div class="dataset">
+        <h2>Upload Dataset</h2>
+
+        <form method="POST"
+      action="{% url 'dataset_load' %}"
+      enctype="multipart/form-data">
+
+        {% csrf_token %}
+
+        <input type="file" name="dataset">
+
+        <button type="submit">
+            Upload Dataset
+        </button>
+
+        </form>
+        {% if dataset_uploaded %}
+        <p type="dataset_uploaded">{{ dataset_uploaded }}</p>
+        {% endif %}
+    </div>
+    <div class="preprocessing">
+        <h2>Data preprocessing</h2>
+
+        <form method="POST" action="{% url 'data_preprocessing' %}">
+        {% csrf_token %}
+
+        <button type="submit">Data preprocess</button>
+        </form>
+            {% if preprocess_task %}
+               <p class="preprocess_task">{{ preprocess_task }}</p>
+            {% endif %}
+    </div>
+    <div class="'model_training">
+        <h2>Model Training</h2>
+        <form method="POST" action="{% url 'model_training' %}"">
+        {% csrf_token %} 
+        <button type="submit">Model Training</button>
+        </form>
+        {% if train_task %}
+               <p class="train_task">{{ train_task }}</p>
+        {% endif %}
+        
+    </div>
+    <div class="prediction">
+        <h2>Prediction</h2>
+            <form method="POST"
+                action="{% url 'prediction' %}"
+                enctype="multipart/form-data">
+
+                {% csrf_token %}
+
+                <input type="file" name="image" accept="image/*">
+
+                <button type="submit">Prediction</button>
+            </form> 
+                {% if predict %}
+                    <p class="prediction">{{ predict }}</p>
+                {% endif %}
+
+
+    </div>
+
+</div>
+
+
+
+</body>
+</html>
